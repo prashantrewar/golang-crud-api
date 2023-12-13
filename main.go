@@ -24,11 +24,15 @@ type Director struct{
 
 var movies []Movie
 
+// GetMovies func
+
 func getMovies(w http.ResponseWriter, r *http.Request){
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(movies)
 	  
 }
+
+// GetMovie func
 
 func getMovie(w http.ResponseWriter, r *http.Request){
 	w.Header().Set("Content-Type", "application/json")
@@ -42,6 +46,8 @@ func getMovie(w http.ResponseWriter, r *http.Request){
 	}
 }
 
+// CreateMovie func
+
 func createMovie(w http.ResponseWriter, r *http.Request){
 	w.Header().Set("Content-Type", "application/json")
 
@@ -52,6 +58,8 @@ func createMovie(w http.ResponseWriter, r *http.Request){
 	movies = append(movies, movie)
 	json.NewEncoder(w).Encode(movie)
 }
+
+// UpdateMovie func
 
 func updateMovie(w http.ResponseWriter, r *http.Request){
 	w.Header().Set("Content-Type", "application/json")
@@ -71,6 +79,8 @@ func updateMovie(w http.ResponseWriter, r *http.Request){
 		}
 	}
 }
+
+// DeleteMovie func
 
 func deleteMovie(w http.ResponseWriter, r *http.Request){
 	w.Header().Set("Content-Type", "application/json")
